@@ -1,0 +1,80 @@
+
+@font-face {
+    font-family: LithosPro;
+    src: url(../fonts/LithosProRegular.ttf);
+}
+
+#intro {
+    height: 22vh;
+}
+
+@media (min-width: 992px) {
+    #intro {
+        margin-top: -10px;
+        height: 22vh !important;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0 0 20px;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+article {
+    background: none !important;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.4) !important;
+}
+
+#logo {
+    font-family: 'LithosPro';
+    letter-spacing: -1px;
+    font-size: 1.1rem;
+}
+
+.btn {
+    text-transform: unset !important;
+    padding: .4rem !important;
+}
+
+.navbar {
+    background-image: linear-gradient(20deg, rgba(2, 25, 84, 0.6), rgba(1, 200, 235, 0.6)), url("../images/bg1.jpg");
+    background-size: cover;
+}
+
+.navbar .nav-link {
+    color: #fff !important;
+}
+
+.nav-item:hover {
+    background-color: rgba(1, 200, 235, 0.2);
+}
+
+.intro_content {
+    background-image: linear-gradient(20deg, rgba(1, 200, 235, 0.6), rgba(2, 25, 84, 0.6)), url("../images/bg1.jpg");
+    background-size: cover;
+}
+
+.footer-content {
+    background-image: linear-gradient(20deg, rgba(1, 200, 235, 0.6), rgba(2, 25, 84, 0.6)), url("../images/bg1.jpg");
+    background-size: cover;
+    min-height: 15vh;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1vh;
+    width: 100%;
+}

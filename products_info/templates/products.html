@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static mathfilters %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 mb-12">
+            <h2>Products</h2>
+            <table class="table table-hover align-middle mb-0 w-100">
+                <thead>
+                <tr>
+                    <td>Title</td>
+                    <td>Description</td>
+                    <td>Price</td>
+                </tr>
+                </thead>
+                <tfoot>
+                <tr>
+                    <td>Title</td>
+                    <td>Description</td>
+                    <td>Price</td>
+                </tr>
+                </tfoot>
+                <tbody>
+                {% for item in object_list %}
+                <tr>
+                    <td><a href="/{{ m.id }}/">{{ item.title }}</a></td>
+                    <td><a href="/{{ m.id }}/">{{ item.description }}</a></td>
+                    {% with numerator=item.price denominator=100 %}
+                    <td><a href="/{{ m.id }}/">{{ numerator|div:denominator }}</a></td>
+                    {% endwith %}
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

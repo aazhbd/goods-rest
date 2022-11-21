@@ -1,0 +1,100 @@
+{% load static mathfilters %}
+<!DOCTYPE html>
+<html class="no-js" lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+    <meta charset="utf-8"/>
+    {% block meta_tag %}
+    <title>
+        {% block title %}
+        {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+        {% endblock %}
+        {% block title_suffix %}
+        {% with self.get_site.site_name as site_name %}
+        {% if site_name %}- {{ site_name }}{% endif %}
+        {% endwith %}
+        {% endblock %}
+    </title>
+    <meta name="description" content="{{ page.search_description }}" />
+    {% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="robots" content="index, follow, I followed"/>
+    <link rel="icon" type="image/png" href="{% static 'images/alogo.png' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/content.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mdb.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/md.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lightslider.min.css' %}" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"/>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ER5E9XJSPX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-ER5E9XJSPX');
+    </script>
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark d-block shadow-2-strong p-1" style="z-index: 2000;">
+        <div class="container-fluid">
+            <a class="navbar-brand nav-link p-0 px-2" id="logo" target="_blank" href="/">
+                <img alt="articulatedlogic.com abdullah al zakir hossain" src="{% static 'images/alogo.png' %}" style="width: 31px" class="p-0 mx-1 rounded-2">ArticulatedLogic.com
+            </a>
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#mainMenu"
+                    aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul class="navbar-nav me-auto mb-0">
+                    <li class="nav-item ripple active">
+                        <a class="nav-link" aria-current="page" href="/"><i class="fas fa-home"></i></a>
+                    </li>
+                    <li class="nav-item ripple">
+                        <a class="nav-link" href="/projects">Projects</a>
+                    </li>
+                    <li class="nav-item ripple">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav d-flex flex-row">
+                    <li class="nav-item me-2 me-lg-2">
+                        <a class="nav-link btn btn-dark px-3" href="https://github.com/aazhbd" rel="nofollow" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item me-3 me-lg-2">
+                        <a class="nav-link btn btn-dark px-3" href="https://de.linkedin.com/in/aazhbd" rel="nofollow" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+{% block content %}{% endblock %}
+
+<footer class="text-lg-start w-100">
+    <div class="text-center text-white p-3 footer-content">
+        <p>
+            <a class="text-white" aria-current="page" href="/">Home</a> |
+            <a class="text-white" href="/projects">Projects</a> |
+            <a class="text-white" href="/privacy">Privacy</a> |
+            <a class="text-white" href="/about">About</a>
+        </p>
+        <p>© 2008 - 2021 Copyright: <a class="text-white" href="http://articulatedlogic.com/">Abdullah Al Zakir Hossain</a></p>
+    </div>
+</footer>
+<script src="{% static 'js/mdb.min.js' %}"></script>
+<script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'js/lightslider.min.js' %}"></script>
+<script>
+    $(document).ready(function() {
+
+    });
+</script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>
